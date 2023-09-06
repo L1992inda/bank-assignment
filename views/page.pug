@@ -1,0 +1,38 @@
+extends defult
+ 
+block content
+
+ .text 
+  div#api  
+
+
+         script.
+
+          function menuOne () {
+           setContentFromUrl("menu1")
+           }
+
+
+          function menuTwo () {
+           setContentFromUrl("menu2")
+           }
+
+          function setContentFromUrl(url){
+          var xhr = new XMLHttpRequest();
+           xhr.onreadystatechange = function() {
+             if ( this.status == 200) {
+                document.getElementById("api").innerHTML = xhr.responseText;
+                }
+              };
+           xhr.open("GET", url, true);
+           xhr.setRequestHeader('content-Type','text/html')
+           xhr.send();
+            }   
+
+       
+  
+
+        
+
+               
+         
